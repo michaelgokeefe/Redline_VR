@@ -15,7 +15,7 @@ public class RoadMaker : MonoBehaviour {
         children.ForEach(child => DestroyImmediate(child));
 
         for (int i = 0; i < RoadSectionLength; i++) {
-            GameObject roadSectionGO = GameObject.Instantiate(RoadSectionPrefab, Vector3.zero + (Vector3.forward * 9f * i), Quaternion.identity) as GameObject;
+            GameObject roadSectionGO = GameObject.Instantiate(RoadSectionPrefab, transform.position + (Vector3.forward * 9f * i), Quaternion.identity) as GameObject;
             roadSectionGO.transform.SetParent(RoadParent.transform);
         }
     }
