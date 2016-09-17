@@ -108,6 +108,9 @@ namespace VRTK
         private bool previousIsGrabbable;
         private bool forcedDropped;
 
+        public Transform LocalTrackingParent;
+        public Transform LocalTrackingTransform;
+
         public bool CheckHideMode(bool defaultMode, ControllerHideMode overrideMode)
         {
             switch (overrideMode)
@@ -660,12 +663,18 @@ namespace VRTK
             //Debug.LogWarning("Rotating Handlebar!!!!!!!!!!");
             Debug.LogWarning("TrackPoint Pos: " + trackPoint.position);
 
+            LocalTrackingTransform.position = trackPoint.position;
 
-            float baselineZValue =  transform.position.z - 0.2f;
-            float localZvalue = trackPoint.position.z - baselineZValue;
-            float currentZValue = Mathf.Clamp(localZvalue, -.125f, .125f)/.125f;
+            //float baselineZValue = transform.position.z;// - 0.2f;
+            //float localZvalue = trackPoint.position.z - baselineZValue;
 
-            transform.localRotation = Quaternion.Euler(0, currentZValue * 20, 0);
+
+            //float steeringDirection = Mathf.Clamp(localZvalue, -.075f, .075f) / .075f;
+
+
+            float steeringDirection = Mathf.Clamp(LocalTrackingTransform.localPosition.z, -.075f, .075f)/.075f;
+
+            transform.localRotation = Quaternion.Euler(0, steeringDirection * -20, 0);
 
 
             //Debug.LogWarning("GrabbedSnapHandle Pos: " + grabbedSnapHandle.position);
