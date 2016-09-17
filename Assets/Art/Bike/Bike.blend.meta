@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 1e805fb77023a9a4eaefb5daaed38994
+timeCreated: 1474131664
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Bike_Body
+    100004: polySurface130
+    100006: polySurface139
+    100008: polySurface6
+    100010: Bike_Handlebars
+    100012: Bike_Pendulumn
+    100014: polySurface128
+    100016: polySurface141
+    100018: Bike_FrontWheel
+    100020: Bike_RearWheel
+    100022: Plane
+    400000: //RootNode
+    400002: Bike_Body
+    400004: polySurface130
+    400006: polySurface139
+    400008: polySurface6
+    400010: Bike_Handlebars
+    400012: Bike_Pendulumn
+    400014: polySurface128
+    400016: polySurface141
+    400018: Bike_FrontWheel
+    400020: Bike_RearWheel
+    400022: Plane
+    2300000: Bike_Body
+    2300002: polySurface130
+    2300004: polySurface139
+    2300006: polySurface6
+    2300008: Bike_Handlebars
+    2300010: Bike_Pendulumn
+    2300012: polySurface128
+    2300014: polySurface141
+    2300016: Bike_FrontWheel
+    2300018: Bike_RearWheel
+    2300020: Plane
+    3300000: Bike_Body
+    3300002: polySurface130
+    3300004: polySurface139
+    3300006: polySurface6
+    3300008: Bike_Handlebars
+    3300010: Bike_Pendulumn
+    3300012: polySurface128
+    3300014: polySurface141
+    3300016: Bike_FrontWheel
+    3300018: Bike_RearWheel
+    3300020: Plane
+    4300000: polySurface139
+    4300002: polySurface6
+    4300004: polySurface130
+    4300006: Bike_Body
+    4300008: Bike_Handlebars
+    4300010: Bike_Pendulumn
+    4300012: polySurface141
+    4300014: polySurface128
+    4300016: Bike_RearWheel
+    4300018: Bike_FrontWheel
+    4300020: Plane
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
