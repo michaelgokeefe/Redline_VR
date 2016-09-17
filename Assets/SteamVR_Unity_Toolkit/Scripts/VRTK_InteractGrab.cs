@@ -199,7 +199,12 @@ namespace VRTK
             if (objectScript.grabAttachMechanic == VRTK_InteractableObject.GrabAttachType.Child_Of_Controller)
             {
                 obj.transform.parent = controllerAttachPoint.transform;
+            } 
+
+            else if (objectScript.grabAttachMechanic == VRTK_InteractableObject.GrabAttachType.TurnHandlebar) {
+
             }
+
             else
             {
                 CreateJoint(obj);

@@ -29,7 +29,8 @@ namespace VRTK
             Track_Object,
             Rotator_Track,
             Child_Of_Controller,
-            Climbable
+            Climbable,
+            TurnHandlebar
         }
 
         public enum AllowedController
@@ -443,6 +444,7 @@ namespace VRTK
         {
             if (trackPoint)
             {
+                Debug.Log("track point?!");
                 switch (grabAttachMechanic)
                 {
                     case GrabAttachType.Rotator_Track:
@@ -450,6 +452,10 @@ namespace VRTK
                         break;
                     case GrabAttachType.Track_Object:
                         FixedUpdateTrackObject();
+                        break;
+
+                    case GrabAttachType.TurnHandlebar:
+                        FixedUpdateRotateHandlebar();
                         break;
                 }
             }
@@ -648,6 +654,23 @@ namespace VRTK
             var rotateForce = trackPoint.position - originalControllerAttachPoint.position;
             rb.AddForceAtPosition(rotateForce, originalControllerAttachPoint.position, ForceMode.VelocityChange);
         }
+
+        private void FixedUpdateRotateHandlebar() {
+
+            //Debug.LogWarning("Rotating Handlebar!!!!!!!!!!");
+            Debug.LogWarning("TrackPoint Pos: " + trackPoint.position);
+
+
+            float baselineZValue =  transform.position.z - 0.2f;
+            float localZvalue = trackPoint.position.z - baselineZValue;
+            float currentZValue = Mathf.Clamp(localZvalue, -.125f, .125f)/.125f;
+
+            transform.localRotation = Quaternion.Euler(0, currentZValue * 20, 0);
+
+
+            //Debug.LogWarning("GrabbedSnapHandle Pos: " + grabbedSnapHandle.position);
+        }
+
 
         private void FixedUpdateTrackObject()
         {
