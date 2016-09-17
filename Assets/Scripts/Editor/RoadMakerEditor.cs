@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
-public class RoadMakerEditor : MonoBehaviour {
+[CustomEditor(typeof(RoadMaker))]
+public class RoadMakerEditor : Editor {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public override void OnInspectorGUI() {
+        DrawDefaultInspector();
+        RoadMaker myTarget = (RoadMaker)target;
+
+
+        if (GUILayout.Button("Build Roads")) {
+            myTarget.BuildRoad();
+        }
+
+        //myTarget.experience = EditorGUILayout.IntField("Experience", myTarget.experience);
+        //EditorGUILayout.LabelField("Level", myTarget.Level.ToString());
+    }
 }
