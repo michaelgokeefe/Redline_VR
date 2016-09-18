@@ -12,6 +12,7 @@ ModelImporter:
     100008: Body
     100010: RedlinePistol
     100012: Trigger
+    100014: Magazine
     400000: body
     400002: //RootNode
     400004: Slide
@@ -19,21 +20,25 @@ ModelImporter:
     400008: Body
     400010: RedlinePistol
     400012: Trigger
+    400014: Magazine
     2300000: body
     2300002: Slide
     2300004: trigger
     2300006: Body
     2300008: Trigger
+    2300010: Magazine
     3300000: body
     3300002: Slide
     3300004: trigger
     3300006: Body
     3300008: Trigger
+    3300010: Magazine
     4300000: body
     4300002: trigger
     4300004: Slide
     4300006: Trigger
     4300008: Body
+    4300010: Magazine
     7400000: Default Take
     9500000: //RootNode
   materials:

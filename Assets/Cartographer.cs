@@ -91,7 +91,7 @@ public class Cartographer : MonoBehaviour { // MonoBehaviour or no?
 			}
 			activePieces.Add(currentTrans.gameObject);
 			currentTrans.rotation = Quaternion.Euler(0f, -90f, 0f);
-			currentTrans.position = new Vector3(-10f-Random.Range(2f, 8f), 0f, worldCovered);
+			currentTrans.position = new Vector3(-10f-Random.Range(2f, 6f), 0f, worldCovered);
 
 			// Spawn right side building
 			if (pool.Get("Rough Building", out current)) {

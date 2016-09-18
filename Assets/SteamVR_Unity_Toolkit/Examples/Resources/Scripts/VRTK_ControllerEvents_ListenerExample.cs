@@ -113,6 +113,8 @@ public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
     private void DoGripPressed(object sender, ControllerInteractionEventArgs e)
     {
         DebugLogger(e.controllerIndex, "GRIP", "pressed down", e);
+
+        Debug.LogError("Reload Grip!!!!!");
     }
 
     private void DoGripReleased(object sender, ControllerInteractionEventArgs e)

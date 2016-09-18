@@ -21,6 +21,7 @@ public class RedlinePistolAnimator : MonoBehaviour {
 	void Start () {
         AmmoCountText.text = AmmoCount.ToString();
         CanShoot = true;
+        _audioSource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
