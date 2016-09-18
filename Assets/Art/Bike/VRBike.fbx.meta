@@ -11,27 +11,38 @@ ModelImporter:
     100006: Bike_Pendulumn
     100008: Bike_RearWheel
     100010: //RootNode
+    100012: Camera
+    100014: Lamp
+    100016: Lamp.001
+    100018: Plane
     400000: Bike_Body
     400002: Bike_FrontWheel
     400004: Bike_Handlebars
     400006: Bike_Pendulumn
     400008: Bike_RearWheel
     400010: //RootNode
+    400012: Camera
+    400014: Lamp
+    400016: Lamp.001
+    400018: Plane
     2300000: Bike_Body
     2300002: Bike_FrontWheel
     2300004: Bike_Handlebars
     2300006: Bike_Pendulumn
     2300008: Bike_RearWheel
+    2300010: Plane
     3300000: Bike_Body
     3300002: Bike_FrontWheel
     3300004: Bike_Handlebars
     3300006: Bike_Pendulumn
     3300008: Bike_RearWheel
+    3300010: Plane
     4300000: Bike_Handlebars
     4300002: Bike_RearWheel
     4300004: Bike_FrontWheel
     4300006: Bike_Pendulumn
     4300008: Bike_Body
+    4300010: Plane
   materials:
     importMaterials: 1
     materialName: 0
