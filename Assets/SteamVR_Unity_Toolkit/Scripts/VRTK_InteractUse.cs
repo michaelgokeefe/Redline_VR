@@ -94,7 +94,6 @@ namespace VRTK
 
         private void OnDisable()
         {
-            Debug.LogError("OnDisable");
             ForceStopUsing();
             GetComponent<VRTK_ControllerEvents>().AliasUseOn -= new ControllerInteractionEventHandler(DoStartUseObject);
             GetComponent<VRTK_ControllerEvents>().AliasUseOff -= new ControllerInteractionEventHandler(DoStopUseObject);

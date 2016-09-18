@@ -9,6 +9,9 @@ public class Bike_Motor : MonoBehaviour {
     public AnimationCurve AccelerationCurve;
     public AnimationCurve DecelerationCurve;
     public bool ThrottleHeld;
+    public float MaxAcceleration;
+    public float MaxDeceleration;
+    public float MaxVelocity;
 
     //public float PercentToCruiseSpeed;
 	// Use this for initialization
@@ -18,25 +21,19 @@ public class Bike_Motor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.W)) {
-            //if (ThrottleHeld) {
-            //PercentToCruiseSpeed += Time.deltaTime / AccelerationTime;
-            //PercentToCruiseSpeed = Mathf.Clamp01(PercentToCruiseSpeed);
-
-            CurrentVelocity = CurrentVelocity + (AccelerationCurve.Evaluate(CurrentVelocity) * Time.deltaTime);
-
+        if (ThrottleHeld) {
+            CurrentVelocity = CurrentVelocity + ((AccelerationCurve.Evaluate(CurrentVelocity/MaxVelocity)) * MaxAcceleration * Time.deltaTime);
         }
         else {
             if (CurrentVelocity > 0) {
-                CurrentVelocity = CurrentVelocity + (DecelerationCurve.Evaluate(CurrentVelocity) * Time.deltaTime);
+                CurrentVelocity = CurrentVelocity + (DecelerationCurve.Evaluate(CurrentVelocity/MaxVelocity) * MaxDeceleration * Time.deltaTime);
             }
             else {
                 CurrentVelocity = 0;
             }
         }
 
-
-	
+        transform.position += transform.forward * Time.deltaTime * CurrentVelocity;
 	}
 
     //public void 

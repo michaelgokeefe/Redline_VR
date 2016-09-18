@@ -110,7 +110,8 @@ namespace VRTK
 
         public Transform LocalTrackingParent;
         public Transform LocalTrackingTransform;
-        public ThrottleTestCube ThrottleTestCube;
+        //public ThrottleTestCube ThrottleTestCube;
+        public Bike_Motor BikeMotor;
 
         public bool CheckHideMode(bool defaultMode, ControllerHideMode overrideMode)
         {
@@ -256,7 +257,8 @@ namespace VRTK
             usingObject = currentUsingObject;
             //
             //Accelerate(usingObject.transform.root); // CameraRig is the root of the handle bars
-            ThrottleTestCube.SetThrottle(true);
+            //ThrottleTestCube.SetThrottle(true);
+            BikeMotor.ThrottleHeld = true;
         }
 
         private void Accelerate(Transform parentTransform) {
@@ -270,7 +272,8 @@ namespace VRTK
             usingObject = null;
 
             //
-            ThrottleTestCube.SetThrottle(false);
+            //ThrottleTestCube.SetThrottle(false);
+            BikeMotor.ThrottleHeld = false;
         }
 
         public virtual void ToggleHighlight(bool toggle)
