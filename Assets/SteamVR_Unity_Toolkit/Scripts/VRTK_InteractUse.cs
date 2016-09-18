@@ -52,6 +52,7 @@ namespace VRTK
 
         public void ForceStopUsing()
         {
+            //Debug.LogError("ForceStopUsing");
             if (usingObject != null)
             {
                 StopUsing();
@@ -62,6 +63,7 @@ namespace VRTK
         {
             if (usingObject != null)
             {
+                //Debug.LogError("ForceResetUsing");
                 UnuseInteractedObject(false);
             }
         }
@@ -92,6 +94,7 @@ namespace VRTK
 
         private void OnDisable()
         {
+            Debug.LogError("OnDisable");
             ForceStopUsing();
             GetComponent<VRTK_ControllerEvents>().AliasUseOn -= new ControllerInteractionEventHandler(DoStartUseObject);
             GetComponent<VRTK_ControllerEvents>().AliasUseOff -= new ControllerInteractionEventHandler(DoStopUseObject);
@@ -99,6 +102,8 @@ namespace VRTK
 
         private bool IsObjectUsable(GameObject obj)
         {
+
+            bool result = interactTouch.IsObjectInteractable(obj) && obj.GetComponent<VRTK_InteractableObject>().isUsable;
             return (interactTouch.IsObjectInteractable(obj) && obj.GetComponent<VRTK_InteractableObject>().isUsable);
         }
 
@@ -196,6 +201,7 @@ namespace VRTK
 
         private void StopUsing()
         {
+            //Debug.LogError("StopUsing");
             SetObjectUsingState(usingObject, 0);
             UnuseInteractedObject(true);
         }
@@ -227,8 +233,10 @@ namespace VRTK
 
         private void DoStopUseObject(object sender, ControllerInteractionEventArgs e)
         {
+
             if (IsObjectHoldOnUse(usingObject) || GetObjectUsingState(usingObject) >= 2)
             {
+                Debug.LogError("DoStopUseObject");
                 StopUsing();
             }
         }

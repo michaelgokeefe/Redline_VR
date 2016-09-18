@@ -16,6 +16,8 @@ public class VRTK_ControllerInteract_ListenerExample : MonoBehaviour
         GetComponent<VRTK_InteractTouch>().ControllerUntouchInteractableObject += new ObjectInteractEventHandler(DoInteractUntouch);
         GetComponent<VRTK_InteractGrab>().ControllerGrabInteractableObject += new ObjectInteractEventHandler(DoInteractGrab);
         GetComponent<VRTK_InteractGrab>().ControllerUngrabInteractableObject += new ObjectInteractEventHandler(DoInteractUngrab);
+        GetComponent<VRTK_InteractUse>().ControllerUseInteractableObject += new ObjectInteractEventHandler(DoInteractUse);
+        GetComponent<VRTK_InteractUse>().ControllerUnuseInteractableObject += new ObjectInteractEventHandler(DoInteractUnUse);
     }
 
     private void DebugLogger(uint index, string action, GameObject target)
@@ -52,6 +54,17 @@ public class VRTK_ControllerInteract_ListenerExample : MonoBehaviour
         if (e.target)
         {
             DebugLogger(e.controllerIndex, "NO LONGER GRABBING", e.target);
+        }
+    }
+
+    private void DoInteractUse(object sender, ObjectInteractEventArgs e) {
+        if (e.target) {
+            DebugLogger(e.controllerIndex, "USING", e.target);
+        }
+    }
+    private void DoInteractUnUse(object sender, ObjectInteractEventArgs e) {
+        if (e.target) {
+            DebugLogger(e.controllerIndex, "NO LONGER USING", e.target);
         }
     }
 }

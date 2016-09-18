@@ -110,6 +110,7 @@ namespace VRTK
 
         public Transform LocalTrackingParent;
         public Transform LocalTrackingTransform;
+        public ThrottleTestCube ThrottleTestCube;
 
         public bool CheckHideMode(bool defaultMode, ControllerHideMode overrideMode)
         {
@@ -204,7 +205,7 @@ namespace VRTK
         {
             OnInteractableObjectUntouched(SetInteractableObjectEvent(previousTouchingObject));
             touchingObject = null;
-            StopUsingOnControllerChange(previousTouchingObject);
+            //StopUsingOnControllerChange(previousTouchingObject);
         }
 
         public virtual void Grabbed(GameObject currentGrabbingObject)
@@ -238,6 +239,7 @@ namespace VRTK
             {
                 if (holdButtonToUse)
                 {
+                    Debug.LogError("StopUsingOnControllerChange");
                     usingObject.ForceStopUsing();
                 }
                 else
@@ -247,16 +249,28 @@ namespace VRTK
             }
         }
 
+        // Hacky
         public virtual void StartUsing(GameObject currentUsingObject)
         {
             OnInteractableObjectUsed(SetInteractableObjectEvent(currentUsingObject));
             usingObject = currentUsingObject;
+            //
+            //Accelerate(usingObject.transform.root); // CameraRig is the root of the handle bars
+            ThrottleTestCube.SetThrottle(true);
+        }
+
+        private void Accelerate(Transform parentTransform) {
+            // JESSE
+            parentTransform.position += new Vector3(0, 0, 1);
         }
 
         public virtual void StopUsing(GameObject previousUsingObject)
         {
             OnInteractableObjectUnused(SetInteractableObjectEvent(previousUsingObject));
             usingObject = null;
+
+            //
+            ThrottleTestCube.SetThrottle(false);
         }
 
         public virtual void ToggleHighlight(bool toggle)
@@ -374,6 +388,7 @@ namespace VRTK
 
         public void ForceStopInteracting()
         {
+            //Debug.LogError("ForceStopInteracting");
             if (touchingObject != null && touchingObject.activeInHierarchy)
             {
                 touchingObject.GetComponent<VRTK_InteractTouch>().ForceStopTouching();
@@ -447,7 +462,6 @@ namespace VRTK
         {
             if (trackPoint)
             {
-                Debug.Log("track point?!");
                 switch (grabAttachMechanic)
                 {
                     case GrabAttachType.Rotator_Track:
@@ -661,8 +675,6 @@ namespace VRTK
         private void FixedUpdateRotateHandlebar() {
 
             //Debug.LogWarning("Rotating Handlebar!!!!!!!!!!");
-            Debug.LogWarning("TrackPoint Pos: " + trackPoint.position);
-
             LocalTrackingTransform.position = trackPoint.position;
 
             //float baselineZValue = transform.position.z;// - 0.2f;
