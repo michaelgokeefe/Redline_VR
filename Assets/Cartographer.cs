@@ -262,9 +262,9 @@ public class Cartographer : MonoBehaviour { // MonoBehaviour or no?
 		//for (int ground = )
 		//currentTrans.parent = centerTrans;
 		
-		BoxCollider col = center.AddComponent<BoxCollider>();
+		/*BoxCollider col = center.AddComponent<BoxCollider>();
 		col.size = new Vector3 (lotWidth, height, 10f);
-		col.center = new Vector3(0f, height/2f, 5f);
+		col.center = new Vector3(0f, height/2f, 5f);*/
 		return centerTrans;
 	}
 
@@ -282,15 +282,15 @@ public class Cartographer : MonoBehaviour { // MonoBehaviour or no?
 
 	public Transform BuildStreetlight () {
 		Transform slTrans = new GameObject("Streetlight").transform;
-		Transform lightTrans = new GameObject("Light").transform;
-		lightTrans.rotation = Quaternion.Euler(90f, 0f, 0f);
-		Light l = lightTrans.gameObject.AddComponent<Light>();
-		l.type = LightType.Spot;
-		l.intensity = 3f;
-		l.range = 40f;
-		l.spotAngle = 80f;
-		lightTrans.position = new Vector3(0f, 4f, 0.1f);
-		lightTrans.parent = slTrans;
+		//Transform lightTrans = new GameObject("Light").transform;
+		//lightTrans.rotation = Quaternion.Euler(90f, 0f, 0f);
+		//Light l = lightTrans.gameObject.AddComponent<Light>();
+		//l.type = LightType.Spot;
+		//l.intensity = 3f;
+		//l.range = 40f;
+		//l.spotAngle = 80f;
+		//lightTrans.position = new Vector3(0f, 4f, 0.1f);
+		//lightTrans.parent = slTrans;
 
 		// Note: I really should have made a function to make a straight-up box in a single mesh rather than making so many quads.  REALLY SHOULD HAVE DONE THIS.
 
@@ -341,9 +341,9 @@ public class Cartographer : MonoBehaviour { // MonoBehaviour or no?
 		poleTrans.rotation = Quaternion.Euler(-90f, 0f, 0f);
 		poleTrans.parent = slTrans;
 
-		BoxCollider col = slTrans.gameObject.AddComponent<BoxCollider>();
+		/*BoxCollider col = slTrans.gameObject.AddComponent<BoxCollider>();
 		col.size = new Vector3 (0.2f, 4f, 0.2f);
-		col.center = new Vector3(0f, 2f, 0.1f);
+		col.center = new Vector3(0f, 2f, 0.1f);*/
 
 		return slTrans;
 	}

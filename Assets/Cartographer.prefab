@@ -52,15 +52,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors:
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
+  - serializedVersion: 2
+    rgba: 4465433
+  - serializedVersion: 2
+    rgba: 13830655
+  - serializedVersion: 2
+    rgba: 4291414331
+  - serializedVersion: 2
+    rgba: 4287575833
+  - serializedVersion: 2
+    rgba: 3476230
+  - serializedVersion: 2
+    rgba: 4292346111
+  - serializedVersion: 2
+    rgba: 4278253823
+  - serializedVersion: 2
+    rgba: 4294967295
+  - serializedVersion: 2
+    rgba: 4278207999
+  - serializedVersion: 2
+    rgba: 1744895763
   universalMat: {fileID: 2100000, guid: 50bf4c8763963684eb384c7c80820b63, type: 2}
   lightMat: {fileID: 2100000, guid: a9d92e3ac74e3a44aad43aac5bb15aa9, type: 2}
