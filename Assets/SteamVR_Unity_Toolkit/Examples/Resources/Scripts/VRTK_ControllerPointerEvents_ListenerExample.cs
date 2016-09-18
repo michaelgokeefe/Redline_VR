@@ -3,6 +3,9 @@ using VRTK;
 
 public class VRTK_ControllerPointerEvents_ListenerExample : MonoBehaviour
 {
+
+
+
     private void Start()
     {
         if (GetComponent<VRTK_SimplePointer>() == null)
@@ -26,6 +29,7 @@ public class VRTK_ControllerPointerEvents_ListenerExample : MonoBehaviour
     private void DoPointerIn(object sender, DestinationMarkerEventArgs e)
     {
         DebugLogger(e.controllerIndex, "POINTER IN", e.target, e.distance, e.destinationPosition);
+
     }
 
     private void DoPointerOut(object sender, DestinationMarkerEventArgs e)

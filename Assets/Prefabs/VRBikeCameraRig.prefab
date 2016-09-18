@@ -69,6 +69,7 @@ GameObject:
   - 4: {fileID: 4000011914919328}
   - 33: {fileID: 33000014115030524}
   - 23: {fileID: 23000012469756976}
+  - 114: {fileID: 114000011896451520}
   m_Layer: 0
   m_Name: BarrelPoint
   m_TagString: Untagged
@@ -220,9 +221,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013137719656}
   - 114: {fileID: 114000011542729794}
-  - 114: {fileID: 114000013474475100}
-  - 114: {fileID: 114000012141958930}
   - 114: {fileID: 114000012982788604}
+  - 114: {fileID: 114000011026260828}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -1254,6 +1254,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrcam: {fileID: 0}
+--- !u!114 &114000011026260828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012713014024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd6c3da4f14c5944a18d5064c1e1005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BarrelPoint: {fileID: 4000011914919328}
+  ShotSound: {fileID: 8300000, guid: 4219b9b518a259f4da23d55755c512b9, type: 3}
+  Damage: 5
 --- !u!114 &114000011032208300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1354,6 +1368,36 @@ MonoBehaviour:
   MaxAcceleration: 8
   MaxDeceleration: -2
   MaxVelocity: 30
+--- !u!114 &114000011896451520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010891934834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a45c3d6ea5804fa3bcaaaf8251ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTeleport: 0
+  controller: {fileID: 114000012982788604}
+  pointerMaterial: {fileID: 0}
+  pointerHitColor: {r: 0, g: 0.5, b: 0, a: 1}
+  pointerMissColor: {r: 0.8, g: 0, b: 0, a: 1}
+  showPlayAreaCursor: 0
+  playAreaCursorDimensions: {x: 0, y: 0}
+  handlePlayAreaCursorCollisions: 0
+  ignoreTargetWithTagOrClass: 
+  pointerVisibility: 0
+  holdButtonToActivate: 1
+  activateDelay: 0
+  pointerThickness: 0.002
+  pointerLength: 100
+  showPointerTip: 1
+  customPointerCursor: {fileID: 0}
+  layersToIgnore:
+    serializedVersion: 2
+    m_Bits: 4
 --- !u!114 &114000011966079198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1397,36 +1441,6 @@ MonoBehaviour:
   hideControllerDelay: 0
   globalTouchHighlightColor: {r: 0.94482756, g: 1, b: 0, a: 1}
   customRigidbodyObject: {fileID: 0}
---- !u!114 &114000012141958930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012713014024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 408a45c3d6ea5804fa3bcaaaf8251ab5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enableTeleport: 0
-  controller: {fileID: 0}
-  pointerMaterial: {fileID: 0}
-  pointerHitColor: {r: 1, g: 0, b: 0, a: 1}
-  pointerMissColor: {r: 1, g: 0, b: 0, a: 1}
-  showPlayAreaCursor: 0
-  playAreaCursorDimensions: {x: 0, y: 0}
-  handlePlayAreaCursorCollisions: 0
-  ignoreTargetWithTagOrClass: 
-  pointerVisibility: 0
-  holdButtonToActivate: 1
-  activateDelay: 0
-  pointerThickness: 0.002
-  pointerLength: 100
-  showPointerTip: 1
-  customPointerCursor: {fileID: 0}
-  layersToIgnore:
-    serializedVersion: 2
-    m_Bits: 4
 --- !u!114 &114000012694053114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1519,17 +1533,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
---- !u!114 &114000013474475100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012713014024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3d3423efa297c418680b9e3ffa0b5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114000013663899378
 MonoBehaviour:
   m_ObjectHideFlags: 1

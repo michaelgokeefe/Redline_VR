@@ -3,8 +3,15 @@ using VRTK;
 
 public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
 {
+
+    public Transform BarrelPoint;
+    public AudioClip ShotSound;
+    AudioSource _audioSource;
+    public float Damage;
+
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
         if (GetComponent<VRTK_ControllerEvents>() == null)
         {
             Debug.LogError("VRTK_ControllerEvents_ListenerExample is required to be attached to a SteamVR Controller that has the VRTK_ControllerEvents script attached to it");
@@ -79,6 +86,17 @@ public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
 
     private void DoTriggerClicked(object sender, ControllerInteractionEventArgs e)
     {
+        //Debug.LogError("Shooting!");
+        _audioSource.clip = ShotSound;
+        _audioSource.Play();
+        RaycastHit hit;
+        if (Physics.Raycast(BarrelPoint.position, BarrelPoint.forward, out hit, Mathf.Infinity, 1 << 8)) {
+            hit.collider.GetComponent<EnemyDrone>().TakeHit(Damage);
+
+        }
+
+
+
         DebugLogger(e.controllerIndex, "TRIGGER", "clicked", e);
     }
 
