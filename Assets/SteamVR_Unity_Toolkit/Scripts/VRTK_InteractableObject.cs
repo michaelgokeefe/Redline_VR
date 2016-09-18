@@ -112,6 +112,9 @@ namespace VRTK
         public Transform LocalTrackingTransform;
         //public ThrottleTestCube ThrottleTestCube;
         public Bike_Motor BikeMotor;
+        public float HandlebarTurnAngle;
+        public float HandlebarConstraints; //Lower means more powerful turning
+        public float BikeTurnAngle;
 
         public bool CheckHideMode(bool defaultMode, ControllerHideMode overrideMode)
         {
@@ -687,9 +690,10 @@ namespace VRTK
             //float steeringDirection = Mathf.Clamp(localZvalue, -.075f, .075f) / .075f;
 
 
-            float steeringDirection = Mathf.Clamp(LocalTrackingTransform.localPosition.z, -.075f, .075f)/.075f;
+            float steeringDirection = Mathf.Clamp(LocalTrackingTransform.localPosition.z, -HandlebarConstraints, HandlebarConstraints)/HandlebarConstraints;
 
-            transform.localRotation = Quaternion.Euler(0, steeringDirection * -20, 0);
+            transform.localRotation = Quaternion.Euler(0, steeringDirection * -HandlebarTurnAngle, 0);
+            BikeMotor.transform.localRotation = Quaternion.Euler(0, steeringDirection * -BikeTurnAngle, 0);
 
 
             //Debug.LogWarning("GrabbedSnapHandle Pos: " + grabbedSnapHandle.position);
