@@ -14,11 +14,13 @@ public class RedlinePistolAnimator : MonoBehaviour {
     public float Damage;
     public Text AmmoCountText;
     public int AmmoCount;
+    public int MagSize;
     public bool CanShoot;
     public float NextShotDelay;
     float _nextShotTimeLeft;
 	// Use this for initialization
 	void Start () {
+        AmmoCount = MagSize;
         AmmoCountText.text = AmmoCount.ToString();
         CanShoot = true;
         _audioSource = GetComponent<AudioSource>();
@@ -34,6 +36,11 @@ public class RedlinePistolAnimator : MonoBehaviour {
             }
         }
 	}
+
+    public void Reload() {
+        AmmoCount = MagSize;
+        AmmoCountText.text = AmmoCount.ToString();
+    }
 
     public void PullTrigger() {
         AnimTrigger.Play("TriggerPull");
@@ -51,7 +58,14 @@ public class RedlinePistolAnimator : MonoBehaviour {
             }
             _audioSource.clip = ShotSound;
             _audioSource.Play();
-            AmmoCountText.text = AmmoCount.ToString();
+
+            if (AmmoCount == 0) {
+                AmmoCountText.text = "--";
+            }
+            else {
+                AmmoCountText.text = AmmoCount.ToString();
+            }
+
 
 
             AnimPistol.Play("FirePistol");

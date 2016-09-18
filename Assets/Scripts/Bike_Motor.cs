@@ -12,6 +12,7 @@ public class Bike_Motor : MonoBehaviour {
     public float MaxAcceleration;
     public float MaxDeceleration;
     public float MaxVelocity;
+    public bool GameOver;
 
     //public float PercentToCruiseSpeed;
 	// Use this for initialization
@@ -21,6 +22,10 @@ public class Bike_Motor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (GameOver) {
+            CurrentVelocity = 0;
+            return;
+        }
         if (ThrottleHeld) {
             CurrentVelocity = CurrentVelocity + ((AccelerationCurve.Evaluate(CurrentVelocity/MaxVelocity)) * MaxAcceleration * Time.deltaTime);
         }

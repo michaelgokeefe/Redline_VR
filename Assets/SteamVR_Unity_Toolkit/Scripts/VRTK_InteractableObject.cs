@@ -115,6 +115,7 @@ namespace VRTK
         public float HandlebarTurnAngle;
         public float HandlebarConstraints; //Lower means more powerful turning
         public float BikeTurnAngle;
+        private VRTK_ControllerActions controllerActions;
 
         public bool CheckHideMode(bool defaultMode, ControllerHideMode overrideMode)
         {
@@ -214,6 +215,7 @@ namespace VRTK
 
         public virtual void Grabbed(GameObject currentGrabbingObject)
         {
+            controllerActions = currentGrabbingObject.GetComponent<VRTK_ControllerActions>();
             OnInteractableObjectGrabbed(SetInteractableObjectEvent(currentGrabbingObject));
             ForceReleaseGrab();
             RemoveTrackPoint();
@@ -258,10 +260,13 @@ namespace VRTK
         {
             OnInteractableObjectUsed(SetInteractableObjectEvent(currentUsingObject));
             usingObject = currentUsingObject;
+            //VRTK_ControllerActions contActions =  usingObject.GetComponent<VRTK_ControllerActions>();
             //
             //Accelerate(usingObject.transform.root); // CameraRig is the root of the handle bars
             //ThrottleTestCube.SetThrottle(true);
             BikeMotor.ThrottleHeld = true;
+            controllerActions.TriggerHapticPulse(3500,100,1);
+            //contActions.TriggerHapticPulse(100);
         }
 
         private void Accelerate(Transform parentTransform) {

@@ -52,11 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minDensity: 5
-  maxDensity: 450
+  maxDensity: 20
   densityIncrease: 1
   minimumSpawnGap: 50
-  southboundDensityMultiplier: 6
+  southboundDensityMultiplier: 4
   northboundGapMultiplier: 2
   maxLaneDrift: 1.1
   carFabs:
-  - {fileID: 1000012664986684, guid: cf9647d87fb420a40b843daf98df7337, type: 2}
+  - {fileID: 129822, guid: d8fd00f8329af324d9807bde9be38b12, type: 2}
+  - {fileID: 127400, guid: 36f73d9e7e66c684bad7d470c2723407, type: 2}
+  - {fileID: 139122, guid: b2405d77f908d724b86c3d662784ef25, type: 2}

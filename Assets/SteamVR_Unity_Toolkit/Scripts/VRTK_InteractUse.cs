@@ -235,7 +235,7 @@ namespace VRTK
 
             if (IsObjectHoldOnUse(usingObject) || GetObjectUsingState(usingObject) >= 2)
             {
-                Debug.LogError("DoStopUseObject");
+                Debug.LogWarning("DoStopUseObject");
                 StopUsing();
             }
         }

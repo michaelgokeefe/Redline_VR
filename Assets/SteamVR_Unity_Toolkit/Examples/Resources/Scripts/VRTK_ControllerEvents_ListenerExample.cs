@@ -5,6 +5,7 @@ public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
 {
 
     public RedlinePistolAnimator PistolLogic;
+    public ReloadLogic ReloadLogic;
 
     private void Start()
     {
@@ -85,7 +86,7 @@ public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
         //Debug.LogError("Shooting!");
 
         PistolLogic.PullTrigger();
-
+        
         DebugLogger(e.controllerIndex, "TRIGGER", "clicked", e);
     }
 
@@ -113,8 +114,8 @@ public class VRTK_ControllerEvents_ListenerExample : MonoBehaviour
     private void DoGripPressed(object sender, ControllerInteractionEventArgs e)
     {
         DebugLogger(e.controllerIndex, "GRIP", "pressed down", e);
-
-        Debug.LogError("Reload Grip!!!!!");
+        ReloadLogic.TriggerMagDispense();
+        //Debug.LogError("Reload Grip!!!!!");
     }
 
     private void DoGripReleased(object sender, ControllerInteractionEventArgs e)
