@@ -190,7 +190,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012967931414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -403,6 +403,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2193f850f5cc584a93ffffb56592260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentVelocity: 0
+  AccelerationTime: 0
+  AccelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 2.905052
+      value: 3.4947891
+      inSlope: 0.3195036
+      outSlope: 0.3195036
+      tangentMode: 0
+    - time: 14.7275915
+      value: 4.9782925
+      inSlope: 0.063350156
+      outSlope: 0.063350156
+      tangentMode: 0
+    - time: 17.212252
+      value: 4.8677883
+      inSlope: -0.24613428
+      outSlope: -0.24613428
+      tangentMode: 0
+    - time: 20
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  DecelerationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 20
+      value: -1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  ThrottleHeld: 0
 --- !u!114 &114000012557136140
 MonoBehaviour:
   m_ObjectHideFlags: 1
