@@ -175,6 +175,7 @@
         {
             if (TriggerClicked != null)
             {
+                //Debug.LogError("OnTriggerClicked");
                 TriggerClicked(this, e);
             }
         }
